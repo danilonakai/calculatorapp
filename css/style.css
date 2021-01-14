@@ -68,6 +68,9 @@ header #theme option{
     bottom: 30px;
     right: 0;
     line-height: 1;
+    max-width: 100%;
+    overflow-wrap: break-word;
+    text-align: right;
 }
 #calculator .row{
     width:92%;
