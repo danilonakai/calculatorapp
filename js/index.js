@@ -93,17 +93,6 @@ function identify_button(target){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 // PROCESSA E PRINTA
 function print_value(value){
     let final_value;
@@ -141,15 +130,6 @@ function print_value(value){
 
 
 
-
-
-
-
-
-
-
-
-
 // LIMPA OS CAMPOS
 function clean_fields(){
     temp1 = "";
@@ -157,10 +137,35 @@ function clean_fields(){
     operator = "";
 }
 
+
+
+
+
+function result_size_control(){
+    let result = $('.result span');
+    let result_length = result.html().length;
+
+    if(result_length < 8){
+        result.css({'font-size': '80px'});
+    }else if(result_length >= 8 && result_length < 11){
+        result.css({'font-size': '60px'});
+    }else if(result_length >= 11 && result_length < 15){
+        result.css({'font-size': '40px'});
+    }else if(result_length >= 15){
+        result.css({'font-size': '20px'});
+    }
+}
+
+
+
+
+
 $('#calculator .btn').click(function(){
     let pressed_button = $(this).text();
 
     identify_button(pressed_button);
+
+    result_size_control();
 });
 
 $('#theme').change(function(){
