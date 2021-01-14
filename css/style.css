@@ -2,7 +2,7 @@
     margin: 0;
 }
 body{
-    background-color: #444;
+    background-color: #ececec;
 }
 
 /* HEADER */
@@ -21,64 +21,68 @@ header h1 i{
     margin-right: 10px;
     color:#fe9500;
     background-color: #000;
+    border-radius: 5px;
 }
 header label{
-    font-size: 25px;
-    color:#a5a5a5;
+    font-size: 24px;
+    color: #252525;
+    margin-right: 5px;
 }
 header #theme{
-    font-size: 20px;
-    background-color: rgba(0,0,0,0.3);
-    color: #ccc;
+    font-size: 17px;
+    background-color: #252525;
+    color: #fff;
     border: none;
     padding: 5px 10px;
     outline: none;
 }
+header #theme option{
+    background-color: #252525;
+    color: #fff;
+}
+
 
 /* CALCULATOR */
-.calculator{
+#calculator{
     width:337px;
     height:580px;
-    position:absolute;
-    bottom:10px;
-    left:50%;
-    margin-left: -168.5px;
+    margin: 50px auto 0 auto;
 }
-.calculator .results{
-    width:92%;
+#calculator .results{
+    width:100%;
     margin:0 auto;
 }
-.calculator .results .result{
-    width:100%;
+#calculator .results .result{
+    width: 92%;
     height: 150px;
-    margin-bottom: 26px;
+    padding-bottom: 26px;
+    position: relative;
+    margin: 0 auto;
 }
-.calculator .results .result{position: relative;}
-.calculator .results .result span{
+#calculator .results .result span{
     color: #fff;
     font-size: 80px;
     font-family: system-ui;
     font-weight: 100;
     position: absolute;
-    bottom: 0;
+    bottom: 30px;
     right: 0;
     line-height: 1;
 }
-.calculator .row{
+#calculator .row{
     width:92%;
     height: 69px;
     margin: 0 auto 12px auto;
     display:flex;
     justify-content:space-between;
 }
-.calculator .row .btn{
+#calculator .row .btn{
     width: 69px;
     height: 69px;
-    border:none;
     cursor: pointer;
     
 }
-.calculator .row .large {width: 150px;}
+#calculator .row .large {width: 150px;}
 
 
 
@@ -97,6 +101,7 @@ header #theme{
     font-weight: 500;
     font-family: system-ui;
     outline: none;
+    border:none;
 }
 .iphone .row .large{
     text-align: left;
@@ -123,4 +128,145 @@ header #theme{
 .iphone .row .btn:last-child:focus{
     background-color:#fff; 
     color: #fe9500;
+}
+
+
+
+
+
+/* Default Layout */
+.default{
+    background-color: #151414;
+    border-radius: 10px;
+}
+.default .results .operations{display:none}
+.default .row .btn{
+    background-color:#fff;
+    color:#333333;
+    font-size: 27px;
+    font-weight: 500;
+    font-family: system-ui;
+    outline: none;
+    border:none;
+}
+.default .row .large{
+    text-align: left;
+    box-sizing: border-box;
+    padding-left: 30px;
+}
+.default .row .btn:hover{
+    background-color: #00d7bb;
+    color:#fff;
+}
+.default .row:nth-of-type(2) .btn{
+    background-color: #00d7bb; 
+    color:#fff;
+}
+.default .row:nth-of-type(2) .btn:hover{
+    background-color:#fff; 
+    color: #333333;
+}
+.default .row:nth-of-type(2) .btn:nth-of-type(2){
+    font-size: 20px;
+}
+.default .row .btn:last-child{
+    background-color: #00d7bb; 
+    color:#fff;
+}
+.default .row .btn:last-child:hover{
+    background-color:#fff; 
+    color: #333333;
+}
+.default .row .btn:last-child:focus{
+    background-color:#fff; 
+    color: #333333;
+}
+
+
+
+
+/* Default Light Layout */
+.default-light{
+    background-color: #151414;
+    border-radius: 10px;
+}
+.default-light .results .operations{display:none}
+.default-light .row .btn{
+    background:transparent;
+    border:1px solid #fff;
+    color:#fff;
+    font-size: 27px;
+    font-weight: 500;
+    font-family: system-ui;
+    outline: none;
+}
+.default-light .row .large{
+    text-align: left;
+    box-sizing: border-box;
+    padding-left: 30px;
+}
+.default-light .row .btn:hover{
+    background-color: #fff;
+    color:#151414;
+}
+.default-light .row:nth-of-type(2) .btn{
+    border:1px solid #00d7bb; 
+    color:#fff;
+}
+.default-light .row:nth-of-type(2) .btn:hover{
+    background-color: #00d7bb;
+    color: #151414;
+}
+.default-light .row:nth-of-type(2) .btn:nth-of-type(2){
+    font-size: 20px;
+}
+.default-light .row .btn:last-child{
+    border:1px solid #00d7bb; 
+}
+.default-light .row .btn:last-child:hover{
+    background-color:#00d7bb;
+}
+.default-light .row .btn:last-child:focus{
+    border:1px solid #fff; 
+}
+
+
+
+/* Default Light Layout */
+.gradient{
+    background: rgb(222,72,96);
+    background: linear-gradient(36deg, rgba(222,72,96,1) 0%, rgba(109,41,97,1) 100%);
+    border-radius: 10px;
+}
+.gradient .results .operations{display:none}
+.gradient .row .btn{
+    background:transparent;
+    color:#fff;
+    font-size: 27px;
+    font-weight: 500;
+    font-family: system-ui;
+    outline: none;
+    border:none;
+}
+.gradient .row .large{
+    text-align: left;
+    box-sizing: border-box;
+    padding-left: 30px;
+}
+.gradient .row .btn:hover{
+    box-shadow: 0px 0px 5px 0px #fff;
+}
+.gradient .row:nth-of-type(2) .btn{
+    color:#fff;
+}
+.gradient .row:nth-of-type(2) .btn:hover{
+}
+.gradient .row:nth-of-type(2) .btn:nth-of-type(2){
+    font-size: 20px;
+}
+.gradient .row .btn:last-child{
+}
+.gradient .row .btn:last-child:hover{
+}
+.gradient .row .btn:last-child:focus{ 
 }

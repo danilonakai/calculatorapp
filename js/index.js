@@ -87,10 +87,6 @@ function identify_button(target){
             break;
         }
     }
-    // console.log("temp1 = "+temp1);
-    // console.log("operator = "+operator);
-    // console.log("temp2 = "+temp2);
-    // console.log("total = "+total);
 }
 
 
@@ -138,7 +134,7 @@ function print_value(value){
         break;
     }
 
-    $('.calculator .result span').text(final_value);
+    $('#calculator .result span').text(final_value);
 }
 
 
@@ -161,8 +157,15 @@ function clean_fields(){
     operator = "";
 }
 
-$('.calculator .btn').click(function(){
+$('#calculator .btn').click(function(){
     let pressed_button = $(this).text();
 
     identify_button(pressed_button);
+});
+
+$('#theme').change(function(){
+    let theme = $('#theme').val();
+    let calculator = $('#calculator');
+
+    calculator.removeClass().addClass(theme);
 });
