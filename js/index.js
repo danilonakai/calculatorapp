@@ -158,7 +158,19 @@ function result_size_control(){
 
 
 
+$(window).on('load',function(){
+    let theme = localStorage.getItem('theme');
+    let calculator = $('#calculator');
 
+    if(theme != null){
+        calculator.removeClass().addClass(theme);
+        $('#theme option').each(function(e){
+            if($(this)[0].value == theme){
+                $(this).attr('selected','selected');
+            }
+        });
+    }
+});
 
 $('#calculator .btn').click(function(){
     let pressed_button = $(this).text();
@@ -173,4 +185,5 @@ $('#theme').change(function(){
     let calculator = $('#calculator');
 
     calculator.removeClass().addClass(theme);
+    localStorage.setItem('theme', theme)
 });
