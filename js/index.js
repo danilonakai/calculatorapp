@@ -18,6 +18,10 @@ function on_load(){
             }
         });
     }
+
+    if(window.innerWidth < 500){
+        adjust_button_size();
+    }
 }
 
 function pressed_button(button){
@@ -181,4 +185,19 @@ function mobile_menu(){
             header.classList.remove('show');
         }
     }
+}
+
+function adjust_button_size(){
+    let btnHeight = null;
+
+    Array.from(document.querySelectorAll('#calculator .row .btn')).forEach(btn=> {
+        if(Array.from(btn.classList).indexOf('large') == -1){
+            btn.style.height = btn.clientWidth+"px";
+            btnHeight = btn.clientWidth+"px";
+        }else{
+            if(btnHeight != null){
+                btn.style.height = btnHeight;
+            }
+        }
+    });
 }

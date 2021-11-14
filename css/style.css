@@ -309,6 +309,9 @@ header #theme option{
         margin:0;
         border-radius: 0;
     }
+    #calculator .row{
+        height: auto;
+    }
     #calculator .row .btn{
         width:21%;
     }
