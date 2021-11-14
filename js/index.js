@@ -4,9 +4,39 @@ var operator = "";
 var temp2 = "";
 
 
-// SÓ IDENTIFICA
+function on_load(){
+    let theme = localStorage.getItem('theme');
+    let calculator = document.querySelector('#calculator');
+
+    if(theme != null){
+        calculator.classList = "";
+        calculator.classList.add(theme);
+
+        Array.from(document.querySelectorAll('#theme option')).forEach((e)=> {
+            if(e.value == theme){
+                e.setAttribute('selected','true');
+            }
+        });
+    }
+}
+
+function pressed_button(button){
+    identify_button(button);
+
+    result_size_control();
+}
+
+function change_theme(){
+    let theme = document.getElementById('theme').value;
+    let calculator = document.getElementById('calculator');
+
+    calculator.classList = "";
+    calculator.classList.add(theme);
+    localStorage.setItem('theme', theme)
+}
+
 function identify_button(target){
-    if($.isNumeric(target) || target == "."){
+    if(!isNaN(target) || target == "."){
         if(operator == ""){
             if(total != 0){
                 print_value("initial");
@@ -17,7 +47,6 @@ function identify_button(target){
             temp2 = temp2 += target;
             print_value(temp2);
         }
-        
     }else{
         switch(target){
             case "C":   
@@ -89,11 +118,6 @@ function identify_button(target){
     }
 }
 
-
-
-
-
-// PROCESSA E PRINTA
 function print_value(value){
     let final_value;
 
@@ -123,67 +147,38 @@ function print_value(value){
         break;
     }
 
-    $('#calculator .result span').text(final_value);
+    document.querySelector('#calculator .result span').innerHTML = final_value;
 }
 
-
-
-
-
-// LIMPA OS CAMPOS
 function clean_fields(){
     temp1 = "";
     temp2 = "";
     operator = "";
 }
 
-
-
-
-
 function result_size_control(){
-    let result = $('.result span');
-    let result_length = result.html().length;
-
+    let result = document.querySelector('.result span');
+    let result_length = result.innerHTML.length;
+    
     if(result_length < 8){
-        result.css({'font-size': '80px'});
+        result.style.fontSize = "80px";
     }else if(result_length >= 8 && result_length < 11){
-        result.css({'font-size': '60px'});
+        result.style.fontSize = "60px";
     }else if(result_length >= 11 && result_length < 15){
-        result.css({'font-size': '40px'});
+        result.style.fontSize = "40px";
     }else if(result_length >= 15){
-        result.css({'font-size': '20px'});
+        result.style.fontSize = "20px";
     }
 }
 
+function mobile_menu(){
+    if(window.innerWidth < 500){
+        let header = document.querySelector('header');
 
-
-$(window).on('load',function(){
-    let theme = localStorage.getItem('theme');
-    let calculator = $('#calculator');
-
-    if(theme != null){
-        calculator.removeClass().addClass(theme);
-        $('#theme option').each(function(e){
-            if($(this)[0].value == theme){
-                $(this).attr('selected','selected');
-            }
-        });
+        if(header.offsetTop != 0){
+            header.classList.add('show');
+        }else{
+            header.classList.remove('show');
+        }
     }
-});
-
-$('#calculator .btn').click(function(){
-    let pressed_button = $(this).text();
-
-    identify_button(pressed_button);
-
-    result_size_control();
-});
-
-$('#theme').change(function(){
-    let theme = $('#theme').val();
-    let calculator = $('#calculator');
-
-    calculator.removeClass().addClass(theme);
-    localStorage.setItem('theme', theme)
-});
+}
