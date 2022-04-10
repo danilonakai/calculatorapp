@@ -11,7 +11,7 @@ header{
     margin: 0 auto;
     padding-top: 30px;
     text-align: center;
-    font-family: system-ui;
+    font-family: 'Work Sans', sans-serif;
 }
 header .mobile-btn{display:none;}
 header h1{
@@ -63,7 +63,7 @@ header #theme option{
 #calculator .results .result span{
     color: #fff;
     font-size: 80px;
-    font-family: system-ui;
+    font-family: 'Work Sans', sans-serif;
     font-weight: 100;
     position: absolute;
     bottom: 30px;
@@ -103,7 +103,7 @@ header #theme option{
     color:#fff;
     font-size: 25px;
     font-weight: 500;
-    font-family: system-ui;
+    font-family: 'Work Sans', sans-serif;
     outline: none;
     border:none;
 }
@@ -149,7 +149,7 @@ header #theme option{
     color:#333333;
     font-size: 27px;
     font-weight: 500;
-    font-family: system-ui;
+    font-family: 'Work Sans', sans-serif;
     outline: none;
     border:none;
 }
@@ -201,7 +201,7 @@ header #theme option{
     color:#fff;
     font-size: 27px;
     font-weight: 500;
-    font-family: system-ui;
+    font-family: 'Work Sans', sans-serif;
     outline: none;
 }
 .default-light .row .large{
@@ -248,7 +248,7 @@ header #theme option{
     color:#fff;
     font-size: 27px;
     font-weight: 500;
-    font-family: system-ui;
+    font-family: 'Work Sans', sans-serif;
     outline: none;
     border:none;
 }
