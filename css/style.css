@@ -16,7 +16,7 @@ header{
 header .mobile-btn{display:none;}
 header h1{
     font-weight: 400;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
 }
 header h1 i{
     margin-right: 10px;
@@ -24,24 +24,29 @@ header h1 i{
     background-color: #000;
     border-radius: 5px;
 }
+header h2{
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+header h2 a{
+    color:#535353;
+}
 header label{
     font-size: 24px;
     color: #252525;
     margin-right: 5px;
 }
 header #theme{
+    border-radius: 3px;
+}
+header #theme, header #theme option{
     font-size: 17px;
-    background-color: #252525;
+    background-color: #696564;
     color: #fff;
     border: none;
     padding: 5px 10px;
     outline: none;
 }
-header #theme option{
-    background-color: #252525;
-    color: #fff;
-}
-
 
 /* CALCULATOR */
 #calculator{
