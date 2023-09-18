@@ -293,6 +293,9 @@ header #theme, header #theme option{
     header h1, header label{
         color:#fff;
     }
+    header h2{
+        color:#ccc;
+    }
     header .mobile-btn{
         color:#fff;
         font-size:20px;
